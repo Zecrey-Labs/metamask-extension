@@ -758,6 +758,7 @@ export default class MetamaskController extends EventEmitter {
       startPlugin: (...args) => this.pluginController.startPlugin(args),
       stopPlugin: (...args) => this.pluginController.stopPlugin(args),
       getState: () => this.pluginController.state,
+      getPermissions: () => this.permissionsController.permissions.state,
     };
   }
 
