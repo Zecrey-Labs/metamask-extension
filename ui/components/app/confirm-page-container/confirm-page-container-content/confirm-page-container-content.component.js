@@ -36,6 +36,7 @@ export default class ConfirmPageContainerContent extends Component {
     onConfirmAnyways: PropTypes.func,
     submitText: PropTypes.string,
     disabled: PropTypes.bool,
+    hideConfirmAnyways: PropTypes.bool,
     unapprovedTxCount: PropTypes.number,
     rejectNText: PropTypes.string,    
   };
@@ -94,9 +95,10 @@ export default class ConfirmPageContainerContent extends Component {
       origin,
       ethGasPriceWarning,
       onConfirmAnyways,
+      hideConfirmAnyways,
     } = this.props;
 
-    const primaryAction = {
+    const primaryAction = hideConfirmAnyways ? null : {      
       label: this.context.t('iWillTryAnyway'),
       onClick: onConfirmAnyways,
     };

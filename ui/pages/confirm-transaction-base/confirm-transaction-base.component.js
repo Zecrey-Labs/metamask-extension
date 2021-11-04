@@ -438,7 +438,7 @@ export default class ConfirmTransactionBase extends Component {
                     <>
                       <p>
                         {t('transactionDetailGasTooltipIntro', [
-                          isMainnet ? t('networkNameEthereum') : null,
+                          isMainnet ? t('networkNameEthereum') : '',
                         ])}
                       </p>
                       <p>{t('transactionDetailGasTooltipExplanation')}</p>
@@ -965,6 +965,7 @@ export default class ConfirmTransactionBase extends Component {
         lastTx={lastTx}
         ofText={ofText}
         requestsWaitingText={requestsWaitingText}
+        hideConfirmAnyways={!isDisabled()}
         disabled={
           isDisabled() ||
           submitting ||
