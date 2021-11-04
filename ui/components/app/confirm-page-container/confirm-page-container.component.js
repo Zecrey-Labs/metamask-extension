@@ -62,6 +62,7 @@ export default class ConfirmPageContainer extends Component {
     onCancelAll: PropTypes.func,
     onCancel: PropTypes.func,
     onSubmit: PropTypes.func,
+    onConfirmAnyways: PropTypes.func,
     disabled: PropTypes.bool,
     editingGas: PropTypes.bool,
     handleCloseEditGas: PropTypes.func,
@@ -97,6 +98,7 @@ export default class ConfirmPageContainer extends Component {
       onCancelAll,
       onCancel,
       onSubmit,
+      onConfirmAnyways,
       identiconAddress,
       nonce,
       unapprovedTxCount,
@@ -193,6 +195,7 @@ export default class ConfirmPageContainer extends Component {
             rejectNText={this.context.t('rejectTxsN', [unapprovedTxCount])}
             origin={origin}
             ethGasPriceWarning={ethGasPriceWarning}
+            onConfirmAnyways={onConfirmAnyways}
           />
         )}
         {contentComponent && (
