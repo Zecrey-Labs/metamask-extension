@@ -313,7 +313,7 @@ export default class ConfirmTransactionBase extends Component {
     } = this.props;
     const { t } = this.context;
 
-    const hasSimulationError  = Boolean(this.props.txData.simulationFails);
+    const hasSimulationError = Boolean(this.props.txData.simulationFails);
 
     const renderTotalMaxAmount = () => {
       if (
@@ -428,7 +428,7 @@ export default class ConfirmTransactionBase extends Component {
                     <>
                       <p>
                         {t('transactionDetailGasTooltipIntro', [
-                          isMainnet ? t('networkNameEthereum') : '',
+                          isMainnet ? t('networkNameEthereum') : null,
                         ])}
                       </p>
                       <p>{t('transactionDetailGasTooltipExplanation')}</p>
@@ -496,9 +496,7 @@ export default class ConfirmTransactionBase extends Component {
                 >
                   {t('transactionDetailDappGasMoreInfo')}
                 </Typography>
-              ) : (
-                ''
-              )}
+              ) : null}
               {supportsEIP1559 && (
                 <GasTiming
                   maxPriorityFeePerGas={hexWEIToDecGWEI(
@@ -513,9 +511,7 @@ export default class ConfirmTransactionBase extends Component {
             </>
           }
         />
-      ) : (
-        ''
-      );
+      ) : null;
     };
 
     return (
@@ -898,7 +894,7 @@ export default class ConfirmTransactionBase extends Component {
 
     const { name } = methodData;
     const { valid, errorKey } = this.getErrorKey();
-    const hasSimulationError  = Boolean(txData.simulationFails);
+    const hasSimulationError = Boolean(txData.simulationFails);
     const {
       totalTx,
       positionOfCurrentTx,
