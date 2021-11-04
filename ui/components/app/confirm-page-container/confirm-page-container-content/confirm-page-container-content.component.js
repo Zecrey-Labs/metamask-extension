@@ -38,7 +38,7 @@ export default class ConfirmPageContainerContent extends Component {
     disabled: PropTypes.bool,
     hideConfirmAnyways: PropTypes.bool,
     unapprovedTxCount: PropTypes.number,
-    rejectNText: PropTypes.string,    
+    rejectNText: PropTypes.string,
   };
 
   renderContent() {
@@ -98,10 +98,12 @@ export default class ConfirmPageContainerContent extends Component {
       hideConfirmAnyways,
     } = this.props;
 
-    const primaryAction = hideConfirmAnyways ? null : {      
-      label: this.context.t('iWillTryAnyway'),
-      onClick: onConfirmAnyways,
-    };
+    const primaryAction = hideConfirmAnyways
+      ? null
+      : {
+          label: this.context.t('iWillTryAnyway'),
+          onClick: onConfirmAnyways,
+        };
 
     return (
       <div className="confirm-page-container-content">

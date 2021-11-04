@@ -137,7 +137,7 @@ export default class ConfirmTransactionBase extends Component {
     submitWarning: '',
     ethGasPriceWarning: '',
     editingGas: false,
-    confirmAnyways: false,    
+    confirmAnyways: false,
   };
 
   componentDidUpdate(prevProps) {
@@ -292,7 +292,7 @@ export default class ConfirmTransactionBase extends Component {
   }
 
   handleConfirmAnyways() {
-    this.setState({ confirmAnyways: true })
+    this.setState({ confirmAnyways: true });
   }
 
   renderDetails() {
@@ -921,7 +921,7 @@ export default class ConfirmTransactionBase extends Component {
     const isDisabled = () => {
       return this.state.confirmAnyways ? false : !valid;
     };
-  
+
     let functionType = getMethodName(name);
     if (!functionType) {
       if (type) {
